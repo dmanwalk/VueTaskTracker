@@ -1,5 +1,5 @@
 <template>
-<div :class="[task.reminder ? 'reminder' : '', 'task']">  <!-- If task. reminder is true, add the reminder class, else add no class to div and always apply the task class-->
+<div @dblclick="$emit('toggle-reminder',task.id)"  :class="[task.reminder ? 'reminder' : '', 'task']">  <!-- If task. reminder is true, add the reminder class, else add no class to div and always apply the task class-->
 <h3>
     {{task.text}}
     <i @click="onDelete(task.id)" class="fas fa-times"></i>
